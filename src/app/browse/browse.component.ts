@@ -15,6 +15,7 @@ constructor(private loginService: LoginService, private router:Router)
   ngOnInit()
 {
   if (!this.loginService.isLoggedIn)
+    //console.log("user not logged")
     this.router.navigateByUrl("/login");  
 }
 }

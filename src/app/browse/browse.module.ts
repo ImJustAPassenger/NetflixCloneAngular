@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { BrowseRoutingModule } from './browse-routing.module';
 import { BrowseComponent } from './browse.component';
+import { HeaderModule } from '../components/header/header.module';
+import { MovieCategoryModule } from '../components/movie-category/movie-category.module';
 
 
 @NgModule({
@@ -10,8 +12,10 @@ import { BrowseComponent } from './browse.component';
     BrowseComponent
   ],
   imports: [
+    HeaderModule,
     CommonModule,
-    BrowseRoutingModule
+    BrowseRoutingModule,
+    MovieCategoryModule
   ]
 })
 export class BrowseModule { }

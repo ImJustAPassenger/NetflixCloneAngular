@@ -10,14 +10,13 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit{
-  logoUrl: string;
   bgUrl: string;
   email!: string | null;
   password!: string | null;
   
   constructor (private router: Router, private loginService: LoginService,private toastrService: ToastrService) {
     // Assegna i valori alle proprietà
-    this.logoUrl = LOGO_URL;
+
     this.bgUrl = BG_IMG_URL;
     this.email = null;
     this.password = null;
@@ -26,7 +25,8 @@ export class LoginComponent implements OnInit{
 ngOnInit()
 {
   if (this.loginService.isLoggedIn)
-    this.router.navigateByUrl("/browse");  
+   //console.log("user logged")
+     this.router.navigateByUrl("/browse");  
 }
 
   onSubmit() {

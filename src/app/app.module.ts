@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './gaurds/auth.guard';
+import { HeaderComponent } from './components/header/header.component';
+import { HeaderModule } from './components/header/header.module';
+import { MovieCategoryComponent } from './components/movie-category/movie-category.component';
 
 @NgModule({
   declarations: [AppComponent],
