@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-movie-category',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './movie-category.component.scss'
 })
 export class MovieCategoryComponent {
-
+  @Input() title=""
 }

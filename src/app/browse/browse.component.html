@@ -1,7 +1,7 @@
 <div class="browse-page">
   <app-header></app-header>
   <div class="banner">
-    <img class="banner-img" src="" alt="" />
+    <img class="banner-image" src="https://i.ytimg.com/vi/Q66IOLTi6cM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAMP_x8c12qQTm6xTMEk603v7iZ9A" alt="" />
     <div class="banner-movie-info">
       <h4>Movie title</h4>
       <p>movie description</p>
@@ -12,6 +12,7 @@
     </div>
   </div>
   <div class="movie-categories">
-    <app-movie-category/>
+    <app-movie-category [title]="'Trending'"/>
+    <app-movie-category [title]="'New release'"/>
   </div>
 </div>
