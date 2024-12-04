@@ -1,0 +1,23 @@
+.movie-card{
+    width: 200px;
+    height: 300px;
+    
+    
+    .title{
+        display: none;
+        position: absolute;
+        bottom: 8px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: rgb(88, 87, 87);
+        text-align: center;
+    }
+    &:hover{
+        transform: scale(1.2);
+        transition: all .3 ease-in-out;
+        .title{
+            display: block;
+        }
+    }
+}

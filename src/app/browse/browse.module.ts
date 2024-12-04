@@ -18,4 +18,6 @@ import { MovieCategoryModule } from '../components/movie-category/movie-category
     MovieCategoryModule
   ]
 })
-export class BrowseModule { }
+export class BrowseModule {
+  
+ }

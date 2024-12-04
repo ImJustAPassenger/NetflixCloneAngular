@@ -1,18 +1,43 @@
+<app-header></app-header>
 <div class="browse-page">
-  <app-header></app-header>
   <div class="banner">
-    <img class="banner-image" src="https://i.ytimg.com/vi/Q66IOLTi6cM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAMP_x8c12qQTm6xTMEk603v7iZ9A" alt="" />
+   
+@if(bannerMovie && bannerMovie.videoKey)
+{
+    <iframe
+      class="banner-video"
+      [src]=" domSanitizer.bypassSecurityTrustResourceUrl(
+          'https://www.youtube.com/embed/' +
+            bannerMovie.videoKey +
+            '?autoplay=1&mute=1&showinfo=0&controls=0'
+        )
+      "
+      frameborder="0"
+    ></iframe>
+}@else{
+  <img
+  class="banner-image"
+  [src]="tmdbConfig.imagePath + bannerMovie.poster_path"
+  alt="banner-image"
+/>
+}
+
     <div class="banner-movie-info">
-      <h4>Movie title</h4>
-      <p>movie description</p>
-      <div>
-        <button>Play</button>
-        <button>More info</button>
+      <h4 class="banner-heading">{{ bannerMovie.original_title }}</h4>
+      <p class="banner-description">{{ bannerMovie.overview }}</p>
+      <div class="banner-action">
+        <button class="play-btn">Play</button>
+        <button class="info-btn">More info</button>
       </div>
     </div>
   </div>
-  <div class="movie-categories">
-    <app-movie-category [title]="'Trending'"/>
-    <app-movie-category [title]="'New release'"/>
+  <div class="movie-categories px-16 relative z-50 -mt-40">
+    <app-movie-category [title]="'Popular'" [movieList]="popularMovie" />
+    <app-movie-category [title]="'Top Rated'" [movieList]="topRatedMovies" />
+    <app-movie-category [title]="'Upcoming'" [movieList]="upcomingMovies" />
+    <app-movie-category
+      [title]="'Now Playing'"
+      [movieList]="nowPlayingMovies"
+    />
   </div>
 </div>
